@@ -4,11 +4,6 @@
 provider "aws" {
   region = "us-east-1"
   alias  = "us-east-1"
-
-  assume_role {
-    role_arn     = var.aws_assume_role_arn
-    session_name = "terraform-acm-wildcard"
-  }
 }
 
 ##########################
@@ -17,11 +12,6 @@ provider "aws" {
 provider "aws" {
   region = "us-west-2"
   alias  = "us-west-2"
-
-  assume_role {
-    role_arn     = var.aws_assume_role_arn
-    session_name = "terraform-acm-wildcard"
-  }
 }
 
 ##################################################################
