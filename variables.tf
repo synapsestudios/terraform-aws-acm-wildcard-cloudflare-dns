@@ -13,8 +13,3 @@ variable "root_zone_id" {
   description = "CloudFlare Zone ID"
 }
 
-variable "aws_assume_role_arn" {
-  type        = string
-  description = "ARN of the AWS role to assume when running this deployment."
-}
-
