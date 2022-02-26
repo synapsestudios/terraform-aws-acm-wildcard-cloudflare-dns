@@ -59,8 +59,8 @@ resource "aws_acm_certificate_validation" "us_west_2" {
 ##################################
 resource "cloudflare_record" "validation" {
   zone_id = var.root_zone_id
-  name    = trim(aws_acm_certificate.us_east_1.domain_validation_options.0.resource_record_name, ".")
-  value   = trim(aws_acm_certificate.us_east_1.domain_validation_options.0.resource_record_value, ".")
+  name    = trim(tolist(aws_acm_certificate.us_east_1.domain_validation_options).0.resource_record_name, ".")
+  value   = trim(tolist(aws_acm_certificate.us_east_1.domain_validation_options).0.resource_record_value, ".")
   type    = "CNAME"
   ttl     = 120
 }
